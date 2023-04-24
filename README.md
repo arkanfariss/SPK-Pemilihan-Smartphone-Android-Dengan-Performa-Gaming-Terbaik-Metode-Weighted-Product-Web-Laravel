@@ -63,3 +63,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # Pemilihan-Smartphone-Android-Dengan-Performa-Gaming-Terbaik-Metode-Weighted-Product
+
+# OPEN WEBSITE
+main	: arkanfariss1.tk
+backup	: arkanfariss2.tk
