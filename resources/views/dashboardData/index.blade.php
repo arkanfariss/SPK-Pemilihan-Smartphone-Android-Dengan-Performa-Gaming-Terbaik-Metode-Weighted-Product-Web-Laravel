@@ -27,9 +27,10 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($datas as $data)
+                @foreach ($datas as $key => $data)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        {{-- <td>{{ $loop->iteration }}</td> --}}
+                        <td>{{ $datas->firstItem() + $key }}</td>
                         <td>{{ $data->smartphone }}</td>
                         <td>{{ $data->cpu }}</td>
                         <td>{{ $data->ram }}</td>
@@ -41,11 +42,16 @@
                             <div class="btn-group">
                                 <a href="/dashboard/data/{{ $data->id }}" class="btn btn-primary btn-sm">View</a>
                                 <a href="/dashboard/data/{{ $data->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
-
-                                <a href="/dashboard/data/{{ $data->id }}" method="post" class="btn btn-danger btn-sm"
+                                {{-- <a href="/dashboard/data/{{ $data->id }}" method="post" class="btn btn-danger btn-sm"
                                     onclick="return confirm('Hapus data {{ $data->smartphone }} ?')">Hapus</a>
                                 @method('delete')
-                                @csrf
+                                @csrf --}}
+                                <form action="/dashboard/data/{{ $data->id }}" method="post" class="d-inline">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="btn bg-danger btn-sm"
+                                        onclick="return confirm('Hapus data {{ $data->smartphone }} ?')">Hapus</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -53,7 +59,7 @@
             </tbody>
         </table>
         <div>
-            {{ $datas->firstItem() }}
+            {{-- {{ $datas->firstItem() }} --}}
         </div>
         <div class="mb-5">
             {{ $datas->links() }}

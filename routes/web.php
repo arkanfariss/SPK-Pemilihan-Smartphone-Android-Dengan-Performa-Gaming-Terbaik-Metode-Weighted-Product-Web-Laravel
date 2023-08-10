@@ -18,6 +18,10 @@ use App\Http\Controllers\HitungController;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
     return redirect('/home');
 });
